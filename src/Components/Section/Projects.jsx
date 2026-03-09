@@ -29,7 +29,7 @@ const projectsData = [
     description: "A visually engaging personal portfolio featuring interactive 3D tilt effects, smooth scroll-driven animations, and a fully responsive layout — crafted with React, Tailwind CSS, and Vite.",
     technologies: ["React.js", "Tailwind CSS", "Vite", "EmailJS"],
     githubUrl: "https://github.com/tech-shubh7/myPortfolio.git",
-    liveUrl: "#",
+    liveUrl: "https://shubhamptl.netlify.app/",
     imageUrl: Portfolio,
   },
 ];

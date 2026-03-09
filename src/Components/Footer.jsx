@@ -1,13 +1,9 @@
 import React from "react";
-import { FaLinkedin, FaInstagram, FaXTwitter, FaGithub, FaCode, FaDiscord } from "react-icons/fa6";
+import { FaLinkedin,FaGithub } from "react-icons/fa6";
 
 const socialLinks = [
-  { name: "LinkedIn", icon: FaLinkedin, url: "https://www.linkedin.com/in/shubham-patel-463629257/", color: "#FF6B6B" },
-  { name: "Instagram", icon: FaInstagram, url: "https://www.instagram.com/shubham_patel_12_/", color: "#F6B93B" },
-  { name: "X / Twitter", icon: FaXTwitter, url: "https://x.com/ShubhamPa87", color: "#EDE8E3" },
-  { name: "GitHub", icon: FaGithub, url: "https://github.com/shubham-patel-12", color: "#2ECC71" },
-  { name: "Codolio", icon: FaCode, url: "https://codolio.com/profile/shubham_patel_12", color: "#FF6B6B" },
-  { name: "Discord", icon: FaDiscord, url: "https://discord.gg/shubham_patel_12", color: "#F6B93B" },
+  { name: "LinkedIn", icon: FaLinkedin, url: "www.linkedin.com/in/shubhampatel8604", color: "#FF6B6B" },
+  { name: "GitHub", icon: FaGithub, url: "https://github.com/tech-shubh7", color: "#2ECC71" },
 ];
 
 function Footer() {
@@ -49,10 +45,10 @@ function Footer() {
 
         {/* Copyright */}
         <p className="text-xs text-[#9A9590]/60 tracking-wide">
-          &copy; {new Date().getFullYear()} Shubham Patel
+          &copy; {new Date().getFullYear()}
           <span className="text-[#FF6B6B] mx-1">·</span>
-          Built with React
-        </p>
+          Built with &#10084; By Shubham Patel.
+           </p>
       </div>
     </footer>
   );
