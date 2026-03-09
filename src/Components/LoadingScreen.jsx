@@ -30,13 +30,13 @@ function LoadingScreen({ onComplete }) {
     >
       {/* Concentric warm rings */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <div className="w-60 h-60 border border-[#FF6B6B]/10 rounded-full animate-pulse-ring" />
+        <div className="w-40 h-40 sm:w-60 sm:h-60 border border-[#FF6B6B]/10 rounded-full animate-pulse-ring" />
         <div
-          className="absolute w-80 h-80 border border-[#F6B93B]/8 rounded-full animate-pulse-ring"
+          className="absolute w-56 h-56 sm:w-80 sm:h-80 border border-[#F6B93B]/8 rounded-full animate-pulse-ring"
           style={{ animationDelay: '0.6s' }}
         />
         <div
-          className="absolute w-[26rem] h-[26rem] border border-[#2ECC71]/5 rounded-full animate-pulse-ring"
+          className="absolute w-72 h-72 sm:w-[26rem] sm:h-[26rem] border border-[#2ECC71]/5 rounded-full animate-pulse-ring"
           style={{ animationDelay: '1.2s' }}
         />
       </div>
@@ -64,7 +64,7 @@ function LoadingScreen({ onComplete }) {
       ))}
 
       {/* Typed text */}
-      <div className="relative z-10 mb-10 text-3xl sm:text-4xl md:text-5xl font-mono font-bold text-center px-4">
+      <div className="relative z-10 mb-10 text-xl sm:text-3xl md:text-4xl lg:text-5xl font-mono font-bold text-center px-4">
         <span className="text-[#FF6B6B]">&lt;</span>
         <span className="text-[#EDE8E3]">{text.replace(/^< ?/, '').replace(/ ?\/>$/, '')}</span>
         <span className="text-[#F6B93B]"> /&gt;</span>

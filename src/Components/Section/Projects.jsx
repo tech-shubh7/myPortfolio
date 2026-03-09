@@ -98,11 +98,34 @@ function ProjectCard({ project, index }) {
 
         {/* Content */}
         <div className="p-5">
-          <div className="flex items-center gap-2 mb-2">
-            <span className="w-1.5 h-1.5 rounded-full" style={{ background: accentColor }} />
-            <h3 className="text-lg font-semibold text-[#EDE8E3] group-hover:text-[#FF6B6B] transition-colors">
-              {project.title}
-            </h3>
+          <div className="flex items-center justify-between mb-2">
+            <div className="flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full" style={{ background: accentColor }} />
+              <h3 className="text-lg font-semibold text-[#EDE8E3] group-hover:text-[#FF6B6B] transition-colors">
+                {project.title}
+              </h3>
+            </div>
+            {/* Always-visible icon links */}
+            <div className="flex items-center gap-2">
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-8 h-8 rounded-full bg-white/[0.04] flex items-center justify-center text-[#9A9590] hover:text-[#FF6B6B] transition-colors border border-white/8"
+              >
+                <FiGithub size={15} />
+              </a>
+              {project.liveUrl !== "#" && (
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-8 h-8 rounded-full bg-white/[0.04] flex items-center justify-center text-[#9A9590] hover:text-[#F6B93B] transition-colors border border-white/8"
+                >
+                  <FiExternalLink size={15} />
+                </a>
+              )}
+            </div>
           </div>
           <p className="text-sm text-[#9A9590] leading-relaxed mb-4 line-clamp-2">
             {project.description}

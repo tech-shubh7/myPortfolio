@@ -71,7 +71,7 @@ function Home() {
       }} />
 
       {/* Floating ember particles */}
-      {[...Array(10)].map((_, i) => (
+      {[...Array(6)].map((_, i) => (
         <div
           key={i}
           className="absolute rounded-full animate-ember pointer-events-none"
@@ -114,14 +114,14 @@ function Home() {
             <span className="text-[#FF6B6B]/60">const</span> developer <span className="text-[#FF6B6B]/60">=</span> <span className="text-[#F6B93B]/70">&quot;who ships&quot;</span><span className="text-[#9A9590]/40">;</span>
           </p>
 
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05]">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05]">
             <span className="text-[#EDE8E3]">Hi, I&apos;m</span>
             <br />
             <span className="bg-gradient-to-r from-[#FF6B6B] via-[#E85D5D] to-[#FF6B6B] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-march">Shubham</span>
             <span className="text-[#F6B93B]"> Patel</span>
           </h1>
 
-          <h2 className="text-lg sm:text-2xl md:text-3xl font-medium min-h-[2.5rem] break-words">
+          <h2 className="text-base sm:text-2xl md:text-3xl font-medium min-h-[2rem] sm:min-h-[2.5rem] break-words">
             <span className="text-[#F6B93B] font-semibold">
               {displayedText}
               <span className="animate-blink ml-0.5 border-r-2 border-[#F6B93B] text-transparent">|</span>
@@ -140,24 +140,24 @@ function Home() {
             <span className="text-[#2ECC71]/60">// currently:</span> exploring AI &amp; intelligent systems
           </p>
 
-          <div className="flex flex-wrap justify-center lg:justify-start gap-3 pt-2">
+          <div className="flex flex-wrap justify-center lg:justify-start gap-2 sm:gap-3 pt-2">
             <a
               href="#projects"
-              className="group relative bg-[#FF6B6B] text-[#0C0C0C] font-semibold px-7 py-3.5 rounded-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_35px_rgba(255,107,107,0.3)] text-sm sm:text-base overflow-hidden"
+              className="group relative bg-[#FF6B6B] text-[#0C0C0C] font-semibold px-5 py-2.5 sm:px-7 sm:py-3.5 rounded-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_35px_rgba(255,107,107,0.3)] text-xs sm:text-base overflow-hidden"
             >
               <span className="relative z-10">View Projects</span>
               <div className="absolute inset-0 bg-gradient-to-r from-[#E85D5D] to-[#FF6B6B] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </a>
             <a
               href="#contact"
-              className="border border-[#F6B93B]/30 text-[#F6B93B] px-7 py-3.5 rounded-lg font-medium transition-all duration-300 hover:-translate-y-1 hover:bg-[#F6B93B]/8 hover:border-[#F6B93B]/50 hover:shadow-[0_8px_25px_rgba(246,185,59,0.1)] text-sm sm:text-base"
+              className="border border-[#F6B93B]/30 text-[#F6B93B] px-5 py-2.5 sm:px-7 sm:py-3.5 rounded-lg font-medium transition-all duration-300 hover:-translate-y-1 hover:bg-[#F6B93B]/8 hover:border-[#F6B93B]/50 hover:shadow-[0_8px_25px_rgba(246,185,59,0.1)] text-xs sm:text-base"
             >
               Contact Me
             </a>
             <a
               href="/ShubhamResume.pdf"
               download="ShubhamResume.pdf"
-              className="border border-white/8 text-[#9A9590] px-7 py-3.5 rounded-lg font-medium transition-all duration-300 hover:-translate-y-1 hover:text-[#EDE8E3] hover:border-white/15 hover:shadow-[0_6px_20px_rgba(0,0,0,0.2)] text-sm sm:text-base"
+              className="border border-white/8 text-[#9A9590] px-5 py-2.5 sm:px-7 sm:py-3.5 rounded-lg font-medium transition-all duration-300 hover:-translate-y-1 hover:text-[#EDE8E3] hover:border-white/15 hover:shadow-[0_6px_20px_rgba(0,0,0,0.2)] text-xs sm:text-base"
             >
               Resume &darr;
             </a>
