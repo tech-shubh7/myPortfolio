@@ -35,7 +35,7 @@ const educationData = [
     degree: "B.E. in Information Technology",
     school: "Gujarat Technological University",
     years: "2022 – 2026",
-    grade: "CGPA: 8.87",
+    grade: "CGPA: 9.00",
     color: "#FF6B6B",
   },
   {
