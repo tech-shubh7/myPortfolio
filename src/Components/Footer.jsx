@@ -2,7 +2,7 @@ import React from "react";
 import { FaLinkedin,FaGithub } from "react-icons/fa6";
 
 const socialLinks = [
-  { name: "LinkedIn", icon: FaLinkedin, url: "www.linkedin.com/in/shubhampatel8604", color: "#FF6B6B" },
+  { name: "LinkedIn", icon: FaLinkedin, url: "https://www.linkedin.com/in/shubhampatel8604", color: "#FF6B6B" },
   { name: "GitHub", icon: FaGithub, url: "https://github.com/tech-shubh7", color: "#2ECC71" },
 ];
 
