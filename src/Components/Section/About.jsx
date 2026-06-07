@@ -2,24 +2,138 @@ import React, { useEffect, useRef, useState, useCallback } from "react";
 
 /* ───── Flat skill list */
 const allSkills = [
-  { name: "JavaScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg", cat: "lang", level: 90 },
-  { name: "Python", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg", cat: "lang", level: 60 },
-  { name: "Java", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg", cat: "lang", level: 60 },
-  { name: "SQL", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg", cat: "lang", level: 73 },
-  { name: "React.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg", cat: "front", level: 85 },
-  { name: "HTML5", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg", cat: "front", level: 90 },
-  { name: "CSS3/SCSS", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg", cat: "front", level: 80 },
-  { name: "Tailwind", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg", cat: "front", level: 86 },
-  { name: "Bootstrap", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg", cat: "front", level: 72 },
-  { name: "Node.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg", cat: "back", level: 78 },
-  { name: "Express.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg", cat: "back", level: 76 },
-  { name: "MongoDB", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg", cat: "back", level: 74 },
-  { name: "MySQL", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg", cat: "back", level: 70 },
-  { name: "Git/GitHub", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg", cat: "tools", level: 82 },
-  { name: "Docker", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg", cat: "tools", level: 55 },
-  { name: "Postman", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg", cat: "tools", level: 80 },
-  { name: "Figma", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg", cat: "tools", level: 60 },
-  { name: "VS Code", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg", cat: "tools", level: 88 },
+  {
+    name: "JavaScript",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+    cat: "lang",
+    level: 90,
+  },
+  {
+    name: "Python",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+    cat: "lang",
+    level: 80,
+  },
+  {
+    name: "Java",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
+    cat: "lang",
+    level: 60,
+  },
+  {
+    name: "SQL",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+    cat: "lang",
+    level: 75,
+  },
+  {
+    name: "React.js",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+    cat: "front",
+    level: 85,
+  },
+  {
+    name: "HTML5",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+    cat: "front",
+    level: 90,
+  },
+  {
+    name: "CSS3/SCSS",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+    cat: "front",
+    level: 80,
+  },
+  {
+    name: "Tailwind",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
+    cat: "front",
+    level: 86,
+  },
+  {
+    name: "Bootstrap",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg",
+    cat: "front",
+    level: 72,
+  },
+  {
+    name: "Node.js",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+    cat: "back",
+    level: 90,
+  },
+  {
+    name: "Express.js",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+    cat: "back",
+    level: 90,
+  },
+  {
+    name: "MongoDB",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+    cat: "back",
+    level: 74,
+  },
+  {
+    name: "MySQL",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+    cat: "back",
+    level: 70,
+  },
+  {
+    name: "PostgreSQL",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+    cat: "back",
+    level: 80,
+  },
+  {
+    name: "Sequelize",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sequelize/sequelize-original.svg",
+    cat: "back",
+    level: 85,
+  },
+  {
+    name: "Prisma",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prisma/prisma-original.svg",
+    cat: "back",
+    level: 80,
+  },
+  {
+    name: "Redis",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg",
+    cat: "back",
+    level: 70,
+  },
+  {
+    name: "Git/GitHub",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+    cat: "tools",
+    level: 82,
+  },
+  {
+    name: "Docker",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
+    cat: "tools",
+    level: 55,
+  },
+  {
+    name: "Postman",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg",
+    cat: "tools",
+    level: 80,
+  },
+  {
+    name: "Figma",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
+    cat: "tools",
+    level: 60,
+  },
+  {
+    name: "VS Code",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg",
+    cat: "tools",
+    level: 88,
+  },
 ];
 
 const tabs = [
@@ -35,7 +149,7 @@ const educationData = [
     degree: "B.E. in Information Technology",
     school: "Gujarat Technological University",
     years: "2022 – 2026",
-    grade: "CGPA: 9.00",
+    grade: "CGPA: 9.10",
     color: "#FF6B6B",
   },
   {
@@ -49,13 +163,24 @@ const educationData = [
 
 const workData = [
   {
-    role: "Web Developer Intern",
+    role: "Software Engineer",
     company: "Krishaweb Technologies Pvt Ltd",
-    period: "Jan 2026 - Present",
+    period: "May 2026 - present",
+    startDate: "2026-05-01",
+    endDate: "present",
+    type: "Full Stack",
+    description:
+      "Working as a full-time Software Engineer, writing backend services using Node.js and Python in parallel. Collaborating with the team on API design, database schema management, and delivering robust full-stack features.",
+  },
+  {
+    role: "Web Developer Trainee",
+    company: "Krishaweb Technologies Pvt Ltd",
+    period: "Jan 2026 - April 2026",
     startDate: "2026-01-01",
     endDate: "2026-04-30",
     type: "Full Stack",
-    description: "Started with PHP for some backend tasks, then moved to HTML/CSS for a bit, and now mostly working in JavaScript. It's been a mix of everything — picking up whatever the project needs at the time.",
+    description:
+      "Spent 18 weeks going deep into full-stack architecture. Shipped secure RESTful APIs (Node/Express, JWT, OAuth2) and cut response times from 5s to 200ms using queue-based background processing. Designed optimized PostgreSQL schemas, applied SOLID design patterns (Controller-Service-Repository), and built responsive frontend layouts.",
   },
   {
     role: "Frontend Developer Intern",
@@ -64,7 +189,8 @@ const workData = [
     startDate: "2025-06-06",
     endDate: "2025-07-06",
     type: "Frontend",
-    description: "Worked with React.js to build clean, modern UIs — things like dashboard charts, reusable components, and layouts that actually look good. Got a lot more comfortable with component-based thinking here.",
+    description:
+      "Worked with React.js to build clean, modern UIs — things like dashboard charts, reusable components, and layouts that actually look good. Got a lot more comfortable with component-based thinking here.",
   },
   {
     role: "Web Design Intern",
@@ -73,7 +199,8 @@ const workData = [
     startDate: "2025-05-25",
     endDate: "2025-06-25",
     type: "Frontend",
-    description: "Designed a bunch of web pages from scratch — focused on getting the layouts right, added some hover animations and page transitions to make things feel smooth. Mostly HTML, CSS, and a bit of JS.",
+    description:
+      "Designed a bunch of web pages from scratch — focused on getting the layouts right, added some hover animations and page transitions to make things feel smooth. Mostly HTML, CSS, and a bit of JS.",
   },
 ];
 
@@ -81,8 +208,11 @@ function calculateExperienceByType(data) {
   const types = {};
   data.forEach(({ type, startDate, endDate }) => {
     const s = new Date(startDate);
-    const e = new Date(endDate);
-    let months = (e.getFullYear() - s.getFullYear()) * 12 + (e.getMonth() - s.getMonth()) + 1;
+    const e = endDate === "present" ? new Date() : new Date(endDate);
+    let months =
+      (e.getFullYear() - s.getFullYear()) * 12 +
+      (e.getMonth() - s.getMonth()) +
+      1;
     if (months < 1) months = 1;
     types[type] = (types[type] || 0) + months;
   });
@@ -91,13 +221,21 @@ function calculateExperienceByType(data) {
 
 function formatDateRange(start, end) {
   const s = new Date(start);
-  const e = new Date(end);
-  let months = (e.getFullYear() - s.getFullYear()) * 12 + (e.getMonth() - s.getMonth()) + 1;
+  const e = end === "present" ? new Date() : new Date(end);
+  let months =
+    (e.getFullYear() - s.getFullYear()) * 12 +
+    (e.getMonth() - s.getMonth()) +
+    1;
   if (months < 1) months = 1;
   return months === 1 ? "1 month" : `${months} months`;
 }
 
-const catColors = { lang: "#FF6B6B", front: "#F6B93B", back: "#2ECC71", tools: "#EDE8E3" };
+const catColors = {
+  lang: "#FF6B6B",
+  front: "#F6B93B",
+  back: "#2ECC71",
+  tools: "#EDE8E3",
+};
 
 /* ─────── 3D Skill Card ─────── */
 function SkillCard3D({ skill, visible, i }) {
@@ -105,23 +243,34 @@ function SkillCard3D({ skill, visible, i }) {
   const [flipped, setFlipped] = useState(false);
   const color = catColors[skill.cat];
 
-  const handleMouse = useCallback((e) => {
-    const el = ref.current;
-    if (!el || flipped) return;
-    const r = el.getBoundingClientRect();
-    const x = ((e.clientX - r.left) / r.width - 0.5) * 22;
-    const y = ((e.clientY - r.top) / r.height - 0.5) * -22;
-    el.style.transform = `perspective(600px) rotateY(${x}deg) rotateX(${y}deg) scale(1.06)`;
-  }, [flipped]);
+  const handleMouse = useCallback(
+    (e) => {
+      const el = ref.current;
+      if (!el || flipped) return;
+      const r = el.getBoundingClientRect();
+      const x = ((e.clientX - r.left) / r.width - 0.5) * 22;
+      const y = ((e.clientY - r.top) / r.height - 0.5) * -22;
+      el.style.transform = `perspective(600px) rotateY(${x}deg) rotateX(${y}deg) scale(1.06)`;
+    },
+    [flipped],
+  );
 
   const resetMouse = useCallback(() => {
     const el = ref.current;
     if (!el) return;
-    if (!flipped) el.style.transform = "perspective(600px) rotateY(0) rotateX(0) scale(1)";
+    if (!flipped)
+      el.style.transform = "perspective(600px) rotateY(0) rotateX(0) scale(1)";
     setFlipped(false);
   }, [flipped]);
 
-  const levelLabel = skill.level >= 85 ? "Advanced" : skill.level >= 70 ? "Proficient" : skill.level >= 55 ? "Intermediate" : "Learning";
+  const levelLabel =
+    skill.level >= 85
+      ? "Advanced"
+      : skill.level >= 70
+        ? "Proficient"
+        : skill.level >= 55
+          ? "Intermediate"
+          : "Learning";
 
   return (
     <div
@@ -141,13 +290,18 @@ function SkillCard3D({ skill, visible, i }) {
         className="relative w-full h-full transition-transform duration-500"
         style={{
           transformStyle: "preserve-3d",
-          transform: flipped ? "perspective(600px) rotateY(180deg)" : "perspective(600px) rotateY(0)",
+          transform: flipped
+            ? "perspective(600px) rotateY(180deg)"
+            : "perspective(600px) rotateY(0)",
         }}
       >
         {/* ── FRONT ── */}
         <div
           className="absolute inset-0 rounded-2xl flex flex-col items-center justify-center gap-2.5 border border-white/[0.06] overflow-hidden"
-          style={{ backfaceVisibility: "hidden", background: "rgba(255,255,255,0.02)" }}
+          style={{
+            backfaceVisibility: "hidden",
+            background: "rgba(255,255,255,0.02)",
+          }}
         >
           {/* Animated border glow */}
           <div
@@ -167,8 +321,14 @@ function SkillCard3D({ skill, visible, i }) {
             />
           </div>
 
-          <img src={skill.logo} alt={skill.name} className="w-9 h-9 sm:w-10 sm:h-10 drop-shadow-lg" />
-          <span className="text-[#EDE8E3] text-xs sm:text-sm font-semibold tracking-wide">{skill.name}</span>
+          <img
+            src={skill.logo}
+            alt={skill.name}
+            className="w-9 h-9 sm:w-10 sm:h-10 drop-shadow-lg"
+          />
+          <span className="text-[#EDE8E3] text-xs sm:text-sm font-semibold tracking-wide">
+            {skill.name}
+          </span>
 
           {/* Level dots */}
           <div className="flex gap-1">
@@ -177,8 +337,14 @@ function SkillCard3D({ skill, visible, i }) {
                 key={d}
                 className="w-1.5 h-1.5 rounded-full transition-all duration-700"
                 style={{
-                  background: d < Math.round(skill.level / 20) ? color : "rgba(255,255,255,0.08)",
-                  boxShadow: d < Math.round(skill.level / 20) ? `0 0 6px ${color}40` : "none",
+                  background:
+                    d < Math.round(skill.level / 20)
+                      ? color
+                      : "rgba(255,255,255,0.08)",
+                  boxShadow:
+                    d < Math.round(skill.level / 20)
+                      ? `0 0 6px ${color}40`
+                      : "none",
                   transitionDelay: visible ? `${i * 70 + d * 100}ms` : "0ms",
                 }}
               />
@@ -207,8 +373,12 @@ function SkillCard3D({ skill, visible, i }) {
               }}
             />
           </div>
-          <span className="text-xs font-mono mt-1" style={{ color }}>{skill.level}%</span>
-          <span className="text-[10px] text-[#9A9590] uppercase tracking-widest">{levelLabel}</span>
+          <span className="text-xs font-mono mt-1" style={{ color }}>
+            {skill.level}%
+          </span>
+          <span className="text-[10px] text-[#9A9590] uppercase tracking-widest">
+            {levelLabel}
+          </span>
         </div>
       </div>
     </div>
@@ -231,8 +401,10 @@ function About() {
 
   useEffect(() => {
     const obs = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
-      { threshold: 0.08 }
+      ([entry]) => {
+        if (entry.isIntersecting) setVisible(true);
+      },
+      { threshold: 0.08 },
     );
     if (sectionRef.current) obs.observe(sectionRef.current);
     return () => obs.disconnect();
@@ -318,7 +490,10 @@ function About() {
 
   const expByType = calculateExperienceByType(workData);
 
-  const filtered = activeTab === "all" ? allSkills : allSkills.filter((s) => s.cat === activeTab);
+  const filtered =
+    activeTab === "all"
+      ? allSkills
+      : allSkills.filter((s) => s.cat === activeTab);
 
   return (
     <section
@@ -330,7 +505,10 @@ function About() {
         {/* Heading */}
         <div className="text-center mb-20">
           <p className="text-[#9A9590]/40 text-xs font-mono tracking-wider mb-4">
-            <span className="text-[#FF6B6B]/50">&lt;</span>About <span className="text-[#F6B93B]/50">className</span>=<span className="text-[#2ECC71]/50">&quot;me&quot;</span><span className="text-[#FF6B6B]/50">&gt;</span>
+            <span className="text-[#FF6B6B]/50">&lt;</span>About{" "}
+            <span className="text-[#F6B93B]/50">className</span>=
+            <span className="text-[#2ECC71]/50">&quot;me&quot;</span>
+            <span className="text-[#FF6B6B]/50">&gt;</span>
           </p>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#EDE8E3] mb-4">
             About<span className="text-[#FF6B6B]">.</span>
@@ -343,14 +521,17 @@ function About() {
           <h3 className="text-xl font-semibold text-[#EDE8E3] mb-8 flex items-center gap-3">
             <span className="w-6 h-px bg-[#F6B93B]" />
             Technical Skills
-            <span className="text-xs font-mono text-[#9A9590]/30 font-normal ml-2">// what I work with</span>
+            <span className="text-xs font-mono text-[#9A9590]/30 font-normal ml-2">
+              // what I work with
+            </span>
           </h3>
 
           {/* Filter tabs */}
           <div className="flex flex-wrap gap-2 mb-8">
             {tabs.map((t) => {
               const isActive = activeTab === t.key;
-              const accent = t.key === "all" ? "#FF6B6B" : catColors[t.key] || "#FF6B6B";
+              const accent =
+                t.key === "all" ? "#FF6B6B" : catColors[t.key] || "#FF6B6B";
               return (
                 <button
                   key={t.key}
@@ -380,8 +561,11 @@ function About() {
             }}
           >
             {/* Ambient glow behind grid */}
-            <div className="absolute inset-0 -z-10 rounded-3xl opacity-30 blur-3xl pointer-events-none"
-              style={{ background: `radial-gradient(ellipse at 50% 50%, ${catColors[activeTab === "all" ? "lang" : activeTab]}12, transparent 70%)` }}
+            <div
+              className="absolute inset-0 -z-10 rounded-3xl opacity-30 blur-3xl pointer-events-none"
+              style={{
+                background: `radial-gradient(ellipse at 50% 50%, ${catColors[activeTab === "all" ? "lang" : activeTab]}12, transparent 70%)`,
+              }}
             />
 
             <div
@@ -392,7 +576,12 @@ function About() {
               }}
             >
               {filtered.map((skill, i) => (
-                <SkillCard3D key={skill.name} skill={skill} visible={visible} i={i} />
+                <SkillCard3D
+                  key={skill.name}
+                  skill={skill}
+                  visible={visible}
+                  i={i}
+                />
               ))}
             </div>
           </div>
@@ -408,7 +597,9 @@ function About() {
           <h3 className="text-xl font-semibold text-[#EDE8E3] mb-10 flex items-center gap-3">
             <span className="w-6 h-px bg-[#2ECC71]" />
             Education
-            <span className="text-xs font-mono text-[#9A9590]/30 font-normal ml-2">// where I studied</span>
+            <span className="text-xs font-mono text-[#9A9590]/30 font-normal ml-2">
+              // where I studied
+            </span>
           </h3>
           <div className="grid sm:grid-cols-2 gap-6">
             {educationData.map((ed, i) => (
@@ -417,11 +608,16 @@ function About() {
                 className="glass-warm rounded-xl p-6 border-l-2 transition-all duration-300 hover:-translate-y-1"
                 style={{ borderLeftColor: ed.color }}
               >
-                <h4 className="text-[#EDE8E3] font-semibold mb-1">{ed.degree}</h4>
+                <h4 className="text-[#EDE8E3] font-semibold mb-1">
+                  {ed.degree}
+                </h4>
                 <p className="text-[#9A9590] text-sm">{ed.school}</p>
                 <div className="flex items-center justify-between mt-4 text-xs">
                   <span className="text-[#9A9590]">{ed.years}</span>
-                  <span className="px-2.5 py-0.5 rounded-full text-[#EDE8E3] text-xs font-medium" style={{ background: `${ed.color}20`, color: ed.color }}>
+                  <span
+                    className="px-2.5 py-0.5 rounded-full text-[#EDE8E3] text-xs font-medium"
+                    style={{ background: `${ed.color}20`, color: ed.color }}
+                  >
                     {ed.grade}
                   </span>
                 </div>
@@ -435,12 +631,17 @@ function About() {
           <h3 className="text-xl font-semibold text-[#EDE8E3] mb-3 flex items-center gap-3">
             <span className="w-6 h-px bg-[#FF6B6B]" />
             Work Experience
-            <span className="text-xs font-mono text-[#9A9590]/30 font-normal ml-2">// the real stuff</span>
+            <span className="text-xs font-mono text-[#9A9590]/30 font-normal ml-2">
+              // the real stuff
+            </span>
           </h3>
           {/* Type summary chips */}
           <div className="flex flex-wrap gap-2 mb-10">
             {Object.entries(expByType).map(([type, months]) => (
-              <span key={type} className="text-xs px-3 py-1 rounded-full border border-[#FF6B6B]/15 text-[#9A9590]">
+              <span
+                key={type}
+                className="text-xs px-3 py-1 rounded-full border border-[#FF6B6B]/15 text-[#9A9590]"
+              >
                 {type}: {months} mo
               </span>
             ))}
@@ -454,8 +655,10 @@ function About() {
               className="absolute left-[7px] top-2 w-px origin-top"
               style={{
                 height: "0%",
-                background: "linear-gradient(to bottom, #FF6B6B, #F6B93B, #2ECC71)",
-                boxShadow: "0 0 8px rgba(255,107,107,0.3), 0 0 20px rgba(255,107,107,0.1)",
+                background:
+                  "linear-gradient(to bottom, #FF6B6B, #F6B93B, #2ECC71)",
+                boxShadow:
+                  "0 0 8px rgba(255,107,107,0.3), 0 0 20px rgba(255,107,107,0.1)",
                 willChange: "height",
               }}
             />
@@ -491,17 +694,26 @@ function About() {
                         borderColor: "rgba(255,255,255,0.1)",
                         background: "transparent",
                         boxShadow: "none",
-                        transition: "border-color 0.4s ease, background 0.4s ease, box-shadow 0.4s ease",
+                        transition:
+                          "border-color 0.4s ease, background 0.4s ease, box-shadow 0.4s ease",
                       }}
                     />
                     <div className="glass-warm rounded-xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/10">
                       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-2">
-                        <h4 className="text-[#EDE8E3] font-semibold">{w.role}</h4>
-                        <span className="text-xs text-[#9A9590]">{formatDateRange(w.startDate, w.endDate)}</span>
+                        <h4 className="text-[#EDE8E3] font-semibold">
+                          {w.role}
+                        </h4>
+                        <span className="text-xs text-[#9A9590]">
+                          {formatDateRange(w.startDate, w.endDate)}
+                        </span>
                       </div>
-                      <p className="text-[#F6B93B] text-sm font-medium mb-2">{w.company}</p>
+                      <p className="text-[#F6B93B] text-sm font-medium mb-2">
+                        {w.company}
+                      </p>
                       <p className="text-sm text-[#9A9590] mb-3">{w.period}</p>
-                      <p className="text-sm text-[#9A9590] leading-relaxed">{w.description}</p>
+                      <p className="text-sm text-[#9A9590] leading-relaxed">
+                        {w.description}
+                      </p>
                     </div>
                   </div>
                 );
