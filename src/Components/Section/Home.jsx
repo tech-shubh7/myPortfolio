@@ -2,13 +2,13 @@ import React, { useState, useEffect, useRef } from "react";
 import DSIMG from "../assets/myphoto.jpeg";
 
 const dynamicTexts = [
-  "Aspiring SDE",
+  "Software Engineer",
   "Full Stack Developer",
   "MERN Stack Engineer",
   "Competitive Programmer",
   "Problem Solver",
   "Tech Enthusiast",
-  "IT Engineering Student",
+  "Python Engineer",
   "System Design Learner",
 ];
 
@@ -129,15 +129,15 @@ function Home() {
           </h2>
 
           <p className="text-[#9A9590] text-sm sm:text-base lg:text-lg leading-relaxed max-w-lg">
-            Full-stack developer specializing in building high-performance web
-            applications with the MERN stack. Passionate about writing clean,
-            scalable code and crafting seamless user experiences — with a keen
-            interest in AI and intelligent systems.
+            Software engineer specializing in backend systems, microservices,
+            and AI-powered applications. I build reliable, scalable systems —
+            from async pipelines to RAG-based AI agents — and I'm comfortable
+            across the full stack when needed.
           </p>
 
           {/* Current status line */}
           <p className="text-[#9A9590]/40 text-xs font-mono tracking-wider">
-            <span className="text-[#2ECC71]/60">// currently:</span> exploring AI &amp; intelligent systems
+            <span className="text-[#2ECC71]/60">// currently:</span> Building AI Agents
           </p>
 
           <div className="flex flex-wrap justify-center lg:justify-start gap-2 sm:gap-3 pt-2">
@@ -184,10 +184,10 @@ function Home() {
 
           {/* Floating tech badges around photo */}
           {[
-            { label: "React", top: "5%", left: "-15%", color: "#FF6B6B" },
+            { label: "Python", top: "5%", left: "-15%", color: "#FF6B6B" },
             { label: "Node", top: "70%", left: "-12%", color: "#2ECC71" },
-            { label: "MongoDB", top: "15%", right: "-18%", color: "#F6B93B" },
-            { label: "JS", bottom: "5%", right: "-10%", color: "#F6B93B" },
+            { label: "FastAPI", top: "15%", right: "-18%", color: "#F6B93B" },
+            { label: "AI", bottom: "5%", right: "-10%", color: "#F6B93B" },
           ].map((badge) => (
             <div
               key={badge.label}

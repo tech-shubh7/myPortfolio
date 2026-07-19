@@ -105,6 +105,30 @@ const allSkills = [
     level: 70,
   },
   {
+    name: "FastAPI",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg",
+    cat: "back",
+    level: 80,
+  },
+  {
+    name: "LangChain",
+    logo: "https://cdn.simpleicons.org/langchain",
+    cat: "back",
+    level: 78,
+  },
+  {
+    name: "LangGraph",
+    logo: "https://cdn.simpleicons.org/langgraph",
+    cat: "back",
+    level: 72,
+  },
+  {
+    name: "RAG",
+    logo: "/rag-icon.svg",
+    cat: "back",
+    level: 80,
+  },
+  {
     name: "Git/GitHub",
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
     cat: "tools",
@@ -170,7 +194,7 @@ const workData = [
     endDate: "present",
     type: "Full Stack",
     description:
-      "Working as a full-time Software Engineer, writing backend services using Node.js and Python in parallel. Collaborating with the team on API design, database schema management, and delivering robust full-stack features.",
+      "Developing scalable backend microservices (User, Admin, Content) and AI applications. Designed background email processing that slashed API response times from ~5s to 500ms, and built Redis/ARQ pipelines for embedding generation. Developed RAG pipelines and AI agents using LangChain and LangGraph, optimizing semantic search with query rewriting.",
   },
   {
     role: "Web Developer Trainee",

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100%" height="100%" fill="none" stroke="currentColor">
+  <!-- Define Gradients -->
+  <defs>
+    <linearGradient id="rag-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF6B6B" />
+      <stop offset="50%" stop-color="#F6B93B" />
+      <stop offset="100%" stop-color="#2ECC71" />
+    </linearGradient>
+  </defs>
+
+  <!-- Database Cylinders (Vector/Data Retrieval) -->
+  <path d="M4 6C4 4.5 7.5 3.5 12 3.5C16.5 3.5 20 4.5 20 6M4 6C4 7.5 7.5 8.5 12 8.5C16.5 8.5 20 7.5 20 6M4 6V11C4 12.5 7.5 13.5 12 13.5C16.5 13.5 20 12.5 20 11V6M4 11V16C4 17.5 7.5 18.5 12 18.5C16.5 18.5 20 17.5 20 16V11" 
+        stroke="url(#rag-gradient)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
+
+  <!-- Scanning / Connection Beam -->
+  <path d="M12 8.5L16 12.5M16 12.5L20 8.5" stroke="#2ECC71" stroke-width="1.2" stroke-dasharray="2,2" opacity="0.8"/>
+
+  <!-- Glowing AI Sparkles (Generation / LLM) -->
+  <path d="M12 5.5C12 6.5 12.5 7 13.5 7C12.5 7 12 7.5 12 8.5C12 7.5 11.5 7 10.5 7C11.5 7 12 6.5 12 5.5Z" fill="#F6B93B"/>
+  <path d="M18 12.5C18 13.2 18.3 13.5 19 13.5C18.3 13.5 18 13.8 18 14.5C18 13.8 17.7 13.5 17 13.5C17.7 13.5 18 13.2 18 12.5Z" fill="#FF6B6B"/>
+
+  <!-- Search Lens (Retrieval Action) -->
+  <circle cx="9" cy="13" r="4.5" fill="#0C0C0C" fill-opacity="0.9" stroke="#EDE8E3" stroke-width="1.5"/>
+  <path d="M12.5 16.5L16 20" stroke="#EDE8E3" stroke-width="1.5" stroke-linecap="round"/>
+</svg>
