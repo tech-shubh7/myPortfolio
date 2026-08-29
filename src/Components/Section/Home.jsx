@@ -2,14 +2,10 @@ import React, { useState, useEffect, useRef } from "react";
 import DSIMG from "../assets/myphoto.jpeg";
 
 const dynamicTexts = [
-  "Software Engineer",
-  "Full Stack Developer",
-  "MERN Stack Engineer",
-  "Competitive Programmer",
-  "Problem Solver",
-  "Tech Enthusiast",
-  "Python Engineer",
-  "System Design Learner",
+  "Backend Engineer",
+  "AI Systems Engineer",
+  "Microservices Developer",
+  "Software Developer",
 ];
 
 function Home() {
@@ -129,15 +125,15 @@ function Home() {
           </h2>
 
           <p className="text-[#9A9590] text-sm sm:text-base lg:text-lg leading-relaxed max-w-lg">
-            Software engineer specializing in backend systems, microservices,
+            Software developer specializing in backend systems, microservices,
             and AI-powered applications. I build reliable, scalable systems —
-            from async pipelines to RAG-based AI agents — and I'm comfortable
+            from asynchronous backend pipelines to RAG-based AI agents — and I&apos;m comfortable
             across the full stack when needed.
           </p>
 
           {/* Current status line */}
           <p className="text-[#9A9590]/40 text-xs font-mono tracking-wider">
-            <span className="text-[#2ECC71]/60">// currently:</span> Building AI Agents
+            <span className="text-[#2ECC71]/60">// currently:</span> Building Backend &amp; AI Systems
           </p>
 
           <div className="flex flex-wrap justify-center lg:justify-start gap-2 sm:gap-3 pt-2">
@@ -184,10 +180,11 @@ function Home() {
 
           {/* Floating tech badges around photo */}
           {[
-            { label: "Python", top: "5%", left: "-15%", color: "#FF6B6B" },
-            { label: "Node", top: "70%", left: "-12%", color: "#2ECC71" },
-            { label: "FastAPI", top: "15%", right: "-18%", color: "#F6B93B" },
-            { label: "AI", bottom: "5%", right: "-10%", color: "#F6B93B" },
+            { label: "Node.js", top: "5%", left: "-15%", color: "#2ECC71" },
+            { label: "Python", top: "70%", left: "-12%", color: "#FF6B6B" },
+            { label: "LangGraph", top: "15%", right: "-18%", color: "#F6B93B" },
+            { label: "RAG", bottom: "18%", right: "-14%", color: "#FF6B6B" },
+            { label: "AI", bottom: "5%", right: "-5%", color: "#F6B93B" },
           ].map((badge) => (
             <div
               key={badge.label}

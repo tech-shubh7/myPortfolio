@@ -64,8 +64,16 @@ function Contact() {
           </h2>
           <div className="w-12 h-0.5 mx-auto rounded-full bg-gradient-to-r from-[#2ECC71] to-[#FF6B6B]" />
           <p className="mt-6 text-[#9A9590] max-w-md mx-auto">
-            Got an idea, a question, or just wanna talk code? I&apos;m all ears.
+            Got a project, engineering query, or opportunity? Feel free to send a message or reach out directly.
           </p>
+          <div className="flex flex-wrap justify-center gap-4 mt-6">
+            <a
+              href="mailto:shubhpvt77@gmail.com"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-white/10 bg-white/[0.03] text-xs sm:text-sm text-[#EDE8E3] hover:border-[#FF6B6B]/40 hover:text-[#FF6B6B] transition-all duration-300"
+            >
+              <span className="text-[#FF6B6B]">&#9993;</span> shubhpvt77@gmail.com
+            </a>
+          </div>
         </div>
 
         {/* Form */}

@@ -2,6 +2,19 @@ import React, { useEffect, useRef, useState, useCallback } from "react";
 
 /* ───── Flat skill list */
 const allSkills = [
+  // LANGUAGES
+  {
+    name: "C",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg",
+    cat: "lang",
+    level: 80,
+  },
+  {
+    name: "Python",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+    cat: "lang",
+    level: 85,
+  },
   {
     name: "JavaScript",
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
@@ -9,53 +22,19 @@ const allSkills = [
     level: 90,
   },
   {
-    name: "Python",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
-    cat: "lang",
-    level: 80,
-  },
-  {
     name: "Java",
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
     cat: "lang",
-    level: 60,
+    level: 70,
   },
   {
     name: "SQL",
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
     cat: "lang",
-    level: 75,
-  },
-  {
-    name: "React.js",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-    cat: "front",
-    level: 85,
-  },
-  {
-    name: "HTML5",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
-    cat: "front",
-    level: 90,
-  },
-  {
-    name: "CSS3/SCSS",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
-    cat: "front",
     level: 80,
   },
-  {
-    name: "Tailwind",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
-    cat: "front",
-    level: 86,
-  },
-  {
-    name: "Bootstrap",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg",
-    cat: "front",
-    level: 72,
-  },
+
+  // BACKEND
   {
     name: "Node.js",
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
@@ -69,20 +48,14 @@ const allSkills = [
     level: 90,
   },
   {
-    name: "MongoDB",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+    name: "Fastify",
+    logo: "https://cdn.simpleicons.org/fastify",
     cat: "back",
-    level: 74,
+    level: 75,
   },
   {
-    name: "MySQL",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
-    cat: "back",
-    level: 70,
-  },
-  {
-    name: "PostgreSQL",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+    name: "FastAPI",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg",
     cat: "back",
     level: 80,
   },
@@ -99,87 +72,174 @@ const allSkills = [
     level: 80,
   },
   {
+    name: "PostgreSQL",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+    cat: "back",
+    level: 82,
+  },
+  {
+    name: "MongoDB",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+    cat: "back",
+    level: 85,
+  },
+  {
     name: "Redis",
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg",
     cat: "back",
-    level: 70,
-  },
-  {
-    name: "FastAPI",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg",
-    cat: "back",
     level: 80,
   },
+
+  // AI ENGINEERING
   {
     name: "LangChain",
-    logo: "https://cdn.simpleicons.org/langchain",
-    cat: "back",
-    level: 78,
+    logo: "/icons/langchain.png",
+    cat: "ai",
+    level: 85,
   },
   {
     name: "LangGraph",
-    logo: "https://cdn.simpleicons.org/langgraph",
-    cat: "back",
-    level: 72,
+    logo: "/icons/langgraph.png",
+    cat: "ai",
+    level: 82,
   },
   {
     name: "RAG",
-    logo: "/rag-icon.svg",
-    cat: "back",
+    logo: "/icons/rag.svg",
+    cat: "ai",
+    level: 88,
+  },
+  {
+    name: "LLM Agents",
+    logo: "/icons/llm-agents.svg",
+    cat: "ai",
+    level: 85,
+  },
+  {
+    name: "Tool Calling",
+    logo: "/icons/tool-calling.svg",
+    cat: "ai",
+    level: 84,
+  },
+  {
+    name: "Query Rewriting",
+    logo: "/icons/query-rewriting.svg",
+    cat: "ai",
+    level: 82,
+  },
+  {
+    name: "Re-ranking",
+    logo: "/icons/re-ranking.svg",
+    cat: "ai",
     level: 80,
   },
   {
-    name: "Git/GitHub",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
-    cat: "tools",
+    name: "Langfuse",
+    logo: "/icons/langfuse.png",
+    cat: "ai",
+    level: 75,
+  },
+
+  // FRONTEND
+  {
+    name: "React.js",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+    cat: "front",
+    level: 88,
+  },
+  {
+    name: "Redux",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg",
+    cat: "front",
     level: 82,
   },
+  {
+    name: "Tailwind CSS",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
+    cat: "front",
+    level: 86,
+  },
+  {
+    name: "HTML",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+    cat: "front",
+    level: 90,
+  },
+  {
+    name: "CSS",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+    cat: "front",
+    level: 85,
+  },
+
+  // TOOLS / INFRASTRUCTURE
   {
     name: "Docker",
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
     cat: "tools",
-    level: 55,
+    level: 75,
+  },
+  {
+    name: "Git",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+    cat: "tools",
+    level: 88,
+  },
+  {
+    name: "GitHub",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
+    cat: "tools",
+    level: 88,
   },
   {
     name: "Postman",
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg",
     cat: "tools",
-    level: 80,
+    level: 85,
   },
   {
-    name: "Figma",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
+    name: "RabbitMQ",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rabbitmq/rabbitmq-original.svg",
     cat: "tools",
-    level: 60,
+    level: 76,
   },
   {
-    name: "VS Code",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg",
+    name: "BullMQ",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg",
     cat: "tools",
-    level: 88,
+    level: 78,
+  },
+  {
+    name: "ARQ",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+    cat: "tools",
+    level: 78,
   },
 ];
 
 const tabs = [
   { key: "all", label: "All" },
   { key: "lang", label: "Languages" },
-  { key: "front", label: "Frontend" },
   { key: "back", label: "Backend" },
-  { key: "tools", label: "Tools" },
+  { key: "ai", label: "AI Engineering" },
+  { key: "front", label: "Frontend" },
+  { key: "tools", label: "Tools / Infrastructure" },
 ];
 
 const educationData = [
   {
-    degree: "B.E. in Information Technology",
-    school: "Gujarat Technological University",
+    degree: "B.Tech in Information Technology",
+    school: "Gujarat Technological University (GTU)",
+    location: "Ahmedabad, India",
     years: "2022 – 2026",
     grade: "CGPA: 9.10",
     color: "#FF6B6B",
   },
   {
-    degree: "Higher Secondary (HSC)",
+    degree: "Higher Secondary Certificate (HSC)",
     school: "New Education High School",
-    years: "2020 – 2022",
+    location: "Gujarat, India",
+    years: "2021 – 2022",
     grade: "80%",
     color: "#F6B93B",
   },
@@ -187,77 +247,45 @@ const educationData = [
 
 const workData = [
   {
-    role: "Software Engineer",
-    company: "Krishaweb Technologies Pvt Ltd",
-    period: "May 2026 - present",
-    startDate: "2026-05-01",
-    endDate: "present",
-    type: "Full Stack",
-    description:
-      "Developing scalable backend microservices (User, Admin, Content) and AI applications. Designed background email processing that slashed API response times from ~5s to 500ms, and built Redis/ARQ pipelines for embedding generation. Developed RAG pipelines and AI agents using LangChain and LangGraph, optimizing semantic search with query rewriting.",
+    role: "Software Developer",
+    company: "KrishaWeb Technologies Pvt Ltd",
+    location: "Ahmedabad, India",
+    period: "Apr. 2026 – Present",
+    bullets: [
+      "Built Node.js microservices for admin, subscription, and user services, and moved email tasks to the background to speed up API responses.",
+      "Developed an Enterprise Policy AI with LangChain, using query rewriting and re-ranking to improve the quality of policy-related answers.",
+      "Moved the HRMS Agent from LangChain to LangGraph and switched from GPT-4o to GPT-5.6 Luna, cutting LLM costs by 92% while improving answer accuracy.",
+    ],
   },
   {
     role: "Web Developer Trainee",
-    company: "Krishaweb Technologies Pvt Ltd",
-    period: "Jan 2026 - April 2026",
-    startDate: "2026-01-01",
-    endDate: "2026-04-30",
-    type: "Full Stack",
-    description:
-      "Spent 18 weeks going deep into full-stack architecture. Shipped secure RESTful APIs (Node/Express, JWT, OAuth2) and cut response times from 5s to 200ms using queue-based background processing. Designed optimized PostgreSQL schemas, applied SOLID design patterns (Controller-Service-Repository), and built responsive frontend layouts.",
+    company: "KrishaWeb Technologies Pvt Ltd",
+    location: "Ahmedabad, India",
+    period: "Jan. 2026 – Apr. 2026",
+    bullets: [
+      "Developed a Blog Management System using JavaScript, HTML, CSS, and DOM manipulation for managing blog content and user interactions.",
+      "Built a Library Management System using core PHP to manage books, users, and library operations.",
+      "Worked with PHP, JavaScript, HTML, CSS, and SQL while building and maintaining web applications.",
+    ],
   },
   {
     role: "Frontend Developer Intern",
     company: "Tech Elecon Pvt. Ltd.",
-    period: "Jun 2025 – July 2025",
-    startDate: "2025-06-06",
-    endDate: "2025-07-06",
-    type: "Frontend",
-    description:
-      "Worked with React.js to build clean, modern UIs — things like dashboard charts, reusable components, and layouts that actually look good. Got a lot more comfortable with component-based thinking here.",
-  },
-  {
-    role: "Web Design Intern",
-    company: "Sparks To Idea",
-    period: "May 2025 – June 2025",
-    startDate: "2025-05-25",
-    endDate: "2025-06-25",
-    type: "Frontend",
-    description:
-      "Designed a bunch of web pages from scratch — focused on getting the layouts right, added some hover animations and page transitions to make things feel smooth. Mostly HTML, CSS, and a bit of JS.",
+    location: "Anand, India",
+    period: "Jun. 2025 – Jul. 2025",
+    bullets: [
+      "Built and maintained an HRMS (Human Resource Management System) for employee data and attendance tracking.",
+      "Implemented custom React hooks, Context API, and structured state management for application features.",
+      "Improved component reuse and simplified the structure of the frontend codebase.",
+    ],
   },
 ];
 
-function calculateExperienceByType(data) {
-  const types = {};
-  data.forEach(({ type, startDate, endDate }) => {
-    const s = new Date(startDate);
-    const e = endDate === "present" ? new Date() : new Date(endDate);
-    let months =
-      (e.getFullYear() - s.getFullYear()) * 12 +
-      (e.getMonth() - s.getMonth()) +
-      1;
-    if (months < 1) months = 1;
-    types[type] = (types[type] || 0) + months;
-  });
-  return types;
-}
-
-function formatDateRange(start, end) {
-  const s = new Date(start);
-  const e = end === "present" ? new Date() : new Date(end);
-  let months =
-    (e.getFullYear() - s.getFullYear()) * 12 +
-    (e.getMonth() - s.getMonth()) +
-    1;
-  if (months < 1) months = 1;
-  return months === 1 ? "1 month" : `${months} months`;
-}
-
 const catColors = {
   lang: "#FF6B6B",
-  front: "#F6B93B",
   back: "#2ECC71",
+  ai: "#F6B93B",
+  front: "#FF9F43",
   tools: "#EDE8E3",
 };
 
@@ -265,7 +293,7 @@ const catColors = {
 function SkillCard3D({ skill, visible, i }) {
   const ref = useRef(null);
   const [flipped, setFlipped] = useState(false);
-  const color = catColors[skill.cat];
+  const color = catColors[skill.cat] || "#FF6B6B";
 
   const handleMouse = useCallback(
     (e) => {
@@ -321,7 +349,7 @@ function SkillCard3D({ skill, visible, i }) {
       >
         {/* ── FRONT ── */}
         <div
-          className="absolute inset-0 rounded-2xl flex flex-col items-center justify-center gap-2.5 border border-white/[0.06] overflow-hidden"
+          className="absolute inset-0 rounded-2xl flex flex-col items-center justify-center gap-2.5 border border-white/[0.06] overflow-hidden p-2 text-center"
           style={{
             backfaceVisibility: "hidden",
             background: "rgba(255,255,255,0.02)",
@@ -348,9 +376,9 @@ function SkillCard3D({ skill, visible, i }) {
           <img
             src={skill.logo}
             alt={skill.name}
-            className="w-9 h-9 sm:w-10 sm:h-10 drop-shadow-lg"
+            className="w-9 h-9 sm:w-10 sm:h-10 drop-shadow-lg object-contain"
           />
-          <span className="text-[#EDE8E3] text-xs sm:text-sm font-semibold tracking-wide">
+          <span className="text-[#EDE8E3] text-xs sm:text-sm font-semibold tracking-wide truncate max-w-full">
             {skill.name}
           </span>
 
@@ -378,7 +406,7 @@ function SkillCard3D({ skill, visible, i }) {
 
         {/* ── BACK ── */}
         <div
-          className="absolute inset-0 rounded-2xl flex flex-col items-center justify-center gap-2 border p-4"
+          className="absolute inset-0 rounded-2xl flex flex-col items-center justify-center gap-2 border p-4 text-center"
           style={{
             backfaceVisibility: "hidden",
             transform: "rotateY(180deg)",
@@ -386,7 +414,7 @@ function SkillCard3D({ skill, visible, i }) {
             background: `linear-gradient(135deg, ${color}10, rgba(12,12,12,0.95))`,
           }}
         >
-          <span className="text-[#EDE8E3] text-sm font-bold">{skill.name}</span>
+          <span className="text-[#EDE8E3] text-sm font-bold truncate max-w-full">{skill.name}</span>
           <div className="w-full h-1.5 rounded-full bg-white/[0.06] overflow-hidden mt-1">
             <div
               className="h-full rounded-full"
@@ -512,8 +540,6 @@ function About() {
 
   const resetGridTilt = useCallback(() => setGridTilt({ x: 0, y: 0 }), []);
 
-  const expByType = calculateExperienceByType(workData);
-
   const filtered =
     activeTab === "all"
       ? allSkills
@@ -588,7 +614,7 @@ function About() {
             <div
               className="absolute inset-0 -z-10 rounded-3xl opacity-30 blur-3xl pointer-events-none"
               style={{
-                background: `radial-gradient(ellipse at 50% 50%, ${catColors[activeTab === "all" ? "lang" : activeTab]}12, transparent 70%)`,
+                background: `radial-gradient(ellipse at 50% 50%, ${catColors[activeTab === "all" ? "lang" : activeTab] || "#FF6B6B"}12, transparent 70%)`,
               }}
             />
 
@@ -636,6 +662,7 @@ function About() {
                   {ed.degree}
                 </h4>
                 <p className="text-[#9A9590] text-sm">{ed.school}</p>
+                <p className="text-xs text-[#9A9590]/70 font-mono mt-1">{ed.location}</p>
                 <div className="flex items-center justify-between mt-4 text-xs">
                   <span className="text-[#9A9590]">{ed.years}</span>
                   <span
@@ -656,20 +683,22 @@ function About() {
             <span className="w-6 h-px bg-[#FF6B6B]" />
             Work Experience
             <span className="text-xs font-mono text-[#9A9590]/30 font-normal ml-2">
-              // the real stuff
+              // professional background
             </span>
           </h3>
-          {/* Type summary chips */}
+
+          {/* Experience positioning summary chips */}
           <div className="flex flex-wrap gap-2 mb-10">
-            {Object.entries(expByType).map(([type, months]) => (
+            {["Backend & AI: Current", "Full Stack: Practical Experience", "Frontend: Internship"].map((chip) => (
               <span
-                key={type}
-                className="text-xs px-3 py-1 rounded-full border border-[#FF6B6B]/15 text-[#9A9590]"
+                key={chip}
+                className="text-xs px-3.5 py-1.5 rounded-full border border-[#FF6B6B]/20 bg-[#FF6B6B]/5 text-[#EDE8E3] font-medium"
               >
-                {type}: {months} mo
+                {chip}
               </span>
             ))}
           </div>
+
           <div className="relative" ref={timelineRef}>
             {/* Timeline track (dim background) */}
             <div className="absolute left-[7px] top-2 bottom-2 w-px bg-white/[0.06]" />
@@ -723,21 +752,32 @@ function About() {
                       }}
                     />
                     <div className="glass-warm rounded-xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/10">
-                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-2">
-                        <h4 className="text-[#EDE8E3] font-semibold">
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-1">
+                        <h4 className="text-[#EDE8E3] font-semibold text-base sm:text-lg">
                           {w.role}
                         </h4>
-                        <span className="text-xs text-[#9A9590]">
-                          {formatDateRange(w.startDate, w.endDate)}
+                        <span className="text-xs text-[#9A9590] font-mono">
+                          {w.period}
                         </span>
                       </div>
-                      <p className="text-[#F6B93B] text-sm font-medium mb-2">
-                        {w.company}
-                      </p>
-                      <p className="text-sm text-[#9A9590] mb-3">{w.period}</p>
-                      <p className="text-sm text-[#9A9590] leading-relaxed">
-                        {w.description}
-                      </p>
+                      <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
+                        <p className="text-[#F6B93B] text-sm font-medium">
+                          {w.company}
+                        </p>
+                        {w.location && (
+                          <span className="text-xs text-[#9A9590]/70 font-mono">
+                            {w.location}
+                          </span>
+                        )}
+                      </div>
+                      <ul className="space-y-2 text-sm text-[#9A9590] leading-relaxed">
+                        {w.bullets.map((bullet, idx) => (
+                          <li key={idx} className="flex items-start gap-2">
+                            <span className="text-[#FF6B6B] mt-1 text-xs">&#9656;</span>
+                            <span>{bullet}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   </div>
                 );
